@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import SearchBar from './components/SearchBar';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Home from './Home';
+import View from './View';
+
+import HomeButton from './components/HomeButton'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+      <div style={{display:'grid', gridTemplateColumns: '75px auto'}} id="Header">
+        <HomeButton></HomeButton>
+        <SearchBar></SearchBar>
+      </div>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/:id" component={View}></Route>
+        </Switch>
+    </Router>
     </div>
   );
 }

@@ -1,0 +1,8 @@
+@import '../colors.scss';
+#HomeButton {
+    display: flex;
+    place-content: center;
+    padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
