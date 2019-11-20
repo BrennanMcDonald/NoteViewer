@@ -1,0 +1,60 @@
+﻿>>> # testing Question 1
+...
+>>> f2k(90)
+305.37222222222226
+>>> f2k(-457.87)
+1.0000000000000064
+>>> # testing Question 2
+... bibformat_apa("George R. R. Martin", "A Game of Thrones", "New York City", "Bantam Spectra", 1996)
+'George R. R. Martin (1996). A Game of Thrones. New York City: Bantam Spectra.'
+>>>  # testing Question 3
+...
+>>> joker()
+Enter your name: Brennan McDonald
+'Jesus can walk on water, but Brennan McDonald can walk on Jesus.'
+>>> # testing Question 4
+...
+>>> bibformat_apa_display()
+Enter the title of a book: Guns, Germs, and Steel: The Fates of Human Societies
+Enter the name of the author? Jared Diamond
+What year was the book published? 1997
+Enter the name of the publisher: W. W. Norton
+In what city are the headquarters of the publisher? New York City
+'Jared Diamond (1997). Guns, Germs, and Steel: The Fates of Human Societies. New York City: W. W. Norton.'
+>>> bmi(195, 74)
+25.033783783783786
+>>> bmi(150, 74)
+19.256756756756758
+>>> f2fi(6.5)
+(6, 6.0)
+>>> f2fi(5.25)
+(5, 3.0)
+>>> # testing Question 7
+...
+>>> bmi_calculator()
+What is your appelation (title): Ms
+What is your first name: Arwen
+What is your last name: Undómiel
+What is your height (in inches): 70
+What is your weight (in pounds): 140
+BMI Record for Ms Arwen Undómiel:
+Subject is 5 feet 10 inches tall and weights 140 pounds.
+The subject's BMI is 20.085714285714285
+>>> # testing Question 8
+...
+>>> draw_court()
+>>> o_canada()
+>>> # testing Question 9
+...
+>>> forms_triangle(20,20,30)
+True
+>>> forms_triangle(2,30,1)
+False
+>>> # testing Question 10
+...
+>>> change_to_coins(1.15)
+6
+>>> change_to_coins(2.02)
+10
+>>> change_to_coins(0.37)
+4
