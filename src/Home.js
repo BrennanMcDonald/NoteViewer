@@ -3,10 +3,6 @@ import Document from './components/Document'
 import "./Home.scss"
 
 export default class Home extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
     render() {
         return (<div>
             {
