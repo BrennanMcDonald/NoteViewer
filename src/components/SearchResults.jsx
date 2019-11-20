@@ -18,6 +18,13 @@ export default class SearchResults extends React.Component {
 
     fetchResults(query) {
         if (query !== this.state.prevQuery) {
+            if (query === "") {
+                this.setState({
+                    loading: false,
+                    results: [],
+                    prevQuery: query
+                });
+            }
             fetch(`https://search-note-search-2-ftoser4h3m5pirtb6zhql6rvfa.ca-central-1.es.amazonaws.com/notes*/_search?q=${query}`)
                 .then(x => x.json())
                 .then(x => {
@@ -50,7 +57,7 @@ export default class SearchResults extends React.Component {
                         this.state.results.map(x => {
                             if (x._source.file.url !== "file:///home/brennan/Takeout/archive_browser.html" && x._source.file.url !== "file:///home/brennan/Takeout/Drive/School/Old Work/Linear Algebra/Untitled document.pdf") {
                                 var courseCode = x._source.file.url.match("1[A-Z]{3}[0-9]{4}") || [""];
-                                return (<div className="result" onClick={() => {window.location.href = '/note/' + x._id}}>
+                                return (<div className="result" onClick={() => { window.location.href = '/note/' + x._id }}>
                                     <div className='course'>{courseCode[0]}</div>
                                     <div className='filename'>{x._source.file.filename}</div>
                                     <div className='content'>{x._source.content.substring(0, Math.min(200, x._source.content.length))}...</div>

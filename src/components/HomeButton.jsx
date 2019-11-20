@@ -7,7 +7,7 @@ export default function () {
     return (
         <div id="HomeButton">
             <Link to="/">
-                <img src={home} alt="Home icon" style={{ width: "100%" }} />
+                <img src={home} alt="Home icon" style={{ width: "100%", filter: "invert(1)" }} />
             </Link>
         </div>
     )

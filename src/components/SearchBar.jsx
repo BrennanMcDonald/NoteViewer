@@ -3,7 +3,6 @@ import SearchResults from './SearchResults.jsx'
 import "./SearchBar.scss"
 
 export default class SearchBar extends React.Component {
-
     constructor(props){
         super(props)
         this.state = {

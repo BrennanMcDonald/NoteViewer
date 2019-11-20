@@ -1,0 +1,36 @@
+.course-section {
+    .course-grid {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        padding: 25px 150px;
+        .filename {
+            text-align: left;
+            height: 200px;
+            border: solid 1px black;
+            margin: 25px;
+            box-sizing: border-box;
+            display: flex;
+            place-items: center;
+            place-content: center;
+            cursor: pointer;
+        }
+    }
+    .course-header {
+        text-align: left;
+        padding: 25px 100px;
+        display: flex;
+        hr {
+            border: none;
+            border-top: 1px solid red;
+            margin-top: 11px;
+            margin-left: 11px;
+            flex: 1;
+        }
+    }
+}
+
+.course-section.collapsed {
+    .course-grid {
+        display: none;
+    }
+}
