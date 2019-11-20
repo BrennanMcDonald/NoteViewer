@@ -23,7 +23,39 @@
     color: #09d3ac;
 }
 
+button:active,
+button:focus {
+    outline: 0;
+}
+
 #Header {
-    background: rgb(190, 0, 0);
+    background: $color2;
     background: linear-gradient(144deg, $color2 0%, $color5 100%);
+}
+
+#Viewer {
+    display: flex;
+    place-content: center;
+    flex-direction: row;
+    button {
+        background: none;
+        border: solid 1px black;
+        font-size: 2em;
+        padding: 20px;
+        height: 400px;
+        align-self: center;
+    }
+}
+
+.react-pdf__Page {
+    position: relative;
+    place-content: center;
+    display: flex;
+}
+
+.react-pdf__Page__canvas {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 50px;
 }
