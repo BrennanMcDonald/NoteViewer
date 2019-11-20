@@ -31,7 +31,7 @@ export default class View extends React.Component {
                     loading: false,
                     document: x,
                     content: "Test" + x._source.content,
-                    file_url: `http://${window.location.hostname}:${window.location.port}/notes/${x._source.file.url.replace("file:///home/brennan/Takeout/Drive/School/", "")}`
+                    file_url: `https://${window.location.hostname}:${window.location.port}/notes/${x._source.file.url.replace("file:///home/brennan/Takeout/Drive/School/", "")}`
                 })
             });
     }
