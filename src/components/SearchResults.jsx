@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 import "./SearchResults.scss"
 export default class SearchResults extends React.Component {
     constructor(props) {
@@ -57,11 +57,15 @@ export default class SearchResults extends React.Component {
                         this.state.results.map(x => {
                             if (x._source.file.url !== "file:///home/brennan/Takeout/archive_browser.html" && x._source.file.url !== "file:///home/brennan/Takeout/Drive/School/Old Work/Linear Algebra/Untitled document.pdf") {
                                 var courseCode = x._source.file.url.match("1[A-Z]{3}[0-9]{4}") || [""];
-                                return (<div className="result" onClick={() => { window.location.href = '/note/' + x._id }}>
-                                    <div className='course'>{courseCode[0]}</div>
-                                    <div className='filename'>{x._source.file.filename}</div>
-                                    <div className='content'>{x._source.content.substring(0, Math.min(200, x._source.content.length))}...</div>
-                                </div>)
+                                return (
+                                    <Link to={'/note/' + x._id} onClick={() => this.setState({query:""})}>
+                                        <div className="result">
+                                            <div className='course'>{courseCode[0]}</div>
+                                            <div className='filename'>{x._source.file.filename}</div>
+                                            <div className='content'>{x._source.content.substring(0, Math.min(200, x._source.content.length))}...</div>
+                                        </div>
+                                    </Link>
+                                )
                             } else {
                                 return (<p></p>);
                             }
