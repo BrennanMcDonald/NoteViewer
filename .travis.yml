@@ -9,9 +9,9 @@ script:
 script:
   - npm test
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: './build'
+  provider: s3
+  access_key_id: $NOTES_AWS_ACCESS_KEY
+  secret_access_key: $NOTES_AWS_SECRET_KEY
+  bucket: "brmc-notes-app"
 on:
   branch: master
