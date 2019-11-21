@@ -58,7 +58,7 @@ export default class SearchResults extends React.Component {
                             if (x._source.file.url !== "file:///home/brennan/Takeout/archive_browser.html" && x._source.file.url !== "file:///home/brennan/Takeout/Drive/School/Old Work/Linear Algebra/Untitled document.pdf") {
                                 var courseCode = x._source.file.url.match("1[A-Z]{3}[0-9]{4}") || [""];
                                 return (
-                                    <Link to={'/note/' + x._id} onClick={() => this.setState({query:""})}>
+                                    <Link to={'/note/' + x._id} onClick={() => this.setState({results: []})} onBlur={() => this.setState({results: []})}>
                                         <div className="result">
                                             <div className='course'>{courseCode[0]}</div>
                                             <div className='filename'>{x._source.file.filename}</div>
